@@ -50,6 +50,76 @@ public:
         {
             cout << "List is Empty." << endl;
         }
+        else
+        {
+            Node *current = top;
+            while (current != NULL)
+            {
+                cout << current->data << " " << endl;
+                current = current->next;
+            }
+            cout << endl;
+        } 
+    }
+
+    bool isEmpty()
+    {
+        return top == NULL;
     }
 };
+
+int main()
+{
+    Stack stact;
+
+    int choice = 0;
+    int value;
+
+    while (choice != 5)
+    {
+        cout << "1. Push\n ";
+        cout << "2. Pop\n ";
+        cout << "3. Peek\n ";
+        cout << "4. Exit\n ";
+        cout << "Enter your choice: ";
+        cin >> choice ;
+
+        switch (choice)
+        {
+        case 1:
+            cout << "Enter the value to push: " ;
+            cin >> value;
+            stact.push(value);
+            break;
+
+        case 2:
+            if (!stact.isEmpty())
+            {
+                stact.pop();
+            }
+            else
+            {
+                cout << "Stact is Empty. Cannot pop." << endl;
+            }
+            break;
+
+            case 3:
+               if (!stact.isEmpty())
+               {
+                stact.peek();
+               }
+               else
+               {
+                cout << "Stact is Empty. No top value. " << endl;
+               }
+               break;
+
+               case 4:
+               cout << "Invalid choice. Try again. " << endl;
+               break;
+        }
+        cout << endl;
+    }
+    return 0;
+}
 
