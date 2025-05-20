@@ -60,4 +60,8 @@ int push(int value)
         } 
     }
     
+    bool isEmpty()
+    {
+        return top == NULL;
+    }
 };
