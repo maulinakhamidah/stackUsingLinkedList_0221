@@ -65,3 +65,8 @@ int push(int value)
         return top == NULL;
     }
 };
+
+int main()
+{
+    
+}
