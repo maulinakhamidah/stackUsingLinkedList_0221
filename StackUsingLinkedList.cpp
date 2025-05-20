@@ -15,13 +15,14 @@ public:
 class Stack
 {
 private:
-     Node *top;
+    Node *top;
+
 public:
     Stack()
     {
         top = NULL;
     }
-int push(int value)
+    int push(int value)
     {
         Node *newNode = new Node();
         newNode->data = value;
@@ -29,7 +30,6 @@ int push(int value)
         top = newNode;
         cout << "Push Value: " << value << endl;
         return value;
-
     }
 
     void pop()
@@ -41,7 +41,7 @@ int push(int value)
         cout << "Popped Value: " << top->data << endl;
         top = top->next;
     }
-    
+
     void peek()
     {
         if (top == NULL)
@@ -57,9 +57,9 @@ int push(int value)
                 current = current->next;
             }
             cout << endl;
-        } 
+        }
     }
-    
+
     bool isEmpty()
     {
         return top == NULL;
@@ -80,6 +80,47 @@ int main()
         cout << "3. Peek\n ";
         cout << "4. Exit\n ";
         cout << "Enter your choice: ";
-        cin >> choice ;
+        cin >> choice;
+
+        switch (choice)
+        {
+        case 1:
+            cout << "Enter the value to push: ";
+            cin >> value;
+            stact.push(value);
+            break;
+
+        case 2:
+            if (!stact.isEmpty())
+            {
+                stact.pop();
+            }
+            else
+            {
+                cout << "Stact is Empty. Cannot pop." << endl;
+            }
+            break;
+
+        case 3:
+            if (!stact.isEmpty())
+            {
+                stact.peek();
+            }
+            else
+            {
+                cout << "Stact is Empty. No top value. " << endl;
+            }
+            break;
+
+        case 4:
+            cout << "Exiting program. " << endl;
+            break;
+        
+        default:
+            cout << "Invalid choice. Try Again." << endl;
+            break;
+        }
+        cout << endl;
     }
+    return 0;
 }
