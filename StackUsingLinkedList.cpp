@@ -29,6 +29,11 @@ int push(int value)
         top = newNode;
         cout << "Push Value: " << value << endl;
         return value;
-        
+
+    }
+
+    void pop()
+    {
+
     }
 };
